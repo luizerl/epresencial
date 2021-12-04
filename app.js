@@ -35,7 +35,7 @@ const getData = () => {
         e.preventDefault();
 
         const disciplinas = [...document.querySelectorAll('.disciplina')];
-        const codigo = [...document.querySelectorAll('.codigo')];
+        const codigo = [...document.querySelectorAll('.codigo')]
         const el = input.value;
         
         count++;
@@ -48,14 +48,12 @@ const getData = () => {
             
         }
         
-        
-        searchOption(departamento, modalidade, disciplinas, el);
-        searchOption(departamento, modalidade, codigo, el);
-        searchOption(modalidade, departamento, disciplinas ,el);
-        searchOption(modalidade, departamento, codigo ,el);
-        
-        addClass(disciplinas, el);
         addClass(codigo, el);
+        addClass(disciplinas, el);
+        
+        searchOption(departamento, modalidade);
+        searchOption(modalidade, departamento);
+        
         input.value = '';
         
     });
@@ -89,13 +87,23 @@ function searchOption (select){
 
 }
 
+function formatCode (code ){
+    let newCode = code.map( i => {
+        return i.innerText.split(' ')[1];
+    });
+    newCode = removeDuplicate(newCode);
+    return newCode;
+}
 
 function addClass (array, el){
     
     array.filter( i => { 
         if ( !el ) return false;
-        else if (i.innerText.toLocaleLowerCase().startsWith(el.toLocaleLowerCase())){
+        else if (i.innerText.includes(el)){
             i.parentElement.classList.add('visible');
+        }
+        else if (i.innerText.toLocaleLowerCase().startsWith(el.toLocaleLowerCase())){
+            i.parentElement.classXList.add('visible');
         }
     });
 }
@@ -114,7 +122,7 @@ function buildWrap(d, c, t , p){
     presencial.className = 'presencial';
 
     disciplina.innerText = d;
-    codigo.innerText =c;
+    codigo.innerText ='Código: ' + c;
     turma.innerText = 'Turma: ' + t;
     presencial.innerText = 'Modalidade: ' + p;
 

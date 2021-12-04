@@ -1,23 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .container div{
     display: none;
-    background-color: lightcoral;
+    background-color:  rgb(19, 43, 89);
     margin: 10px;
     border-radius: 10px;
     padding: 20px;
     color: white;
+    max-width: 50%;
     flex: 1 1 200px;
+}
+.container p{
+    margin: 5px 0;
+}
+.container .disciplina{
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.container .presencial{
+    background-color: white;
+    color:black;
+    display: inline-block;
+    padding: 5px;
 }
 
 .alert{
@@ -49,4 +69,8 @@ form input {
 
 form select, form button{
     padding: 10px;
+}
+
+.search h1{
+    font-size: 50px;
 }
