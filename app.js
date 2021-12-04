@@ -131,7 +131,7 @@ function buildWrap(d, c, t , p){
     turma.className = 'turma';
     presencial.className = 'presencial';
 
-    disciplina.innerText = d;
+    disciplina.innerText = d.toLocaleUpperCase();
     codigo.innerText ='Código: ' + c;
     turma.innerText = 'Turma: ' + t;
     presencial.innerText = 'Modalidade: ' + p;
