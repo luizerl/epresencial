@@ -8,6 +8,7 @@
 }
 
 .container{
+    padding: 0 10%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -22,8 +23,7 @@
     border-radius: 10px;
     padding: 20px;
     color: white;
-    max-width: 50%;
-    flex: 1 1 200px;
+    flex: 1 1 400px;
 }
 .container p{
     margin: 5px 0;
@@ -52,25 +52,74 @@
 
 .search{
     display: flex;
-    margin-top: 30px;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 50vh;
+    color: white;
+    background-color: #181818;
+    position: relative;
 }
 
+.search::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(./img/unb.jpg);
+    opacity: .5;
+    z-index: 1;
+}
+form{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10%;
+    z-index: 10;
+}
 form input {
-    width: 500px;
-    border-radius: 10px;
-    margin: 10px 0;
-    border: 1px solid black;    
+    width: 100%;
+    outline: none;
     display: block;
     padding: 10px;
 }
 
-form select, form button{
+form select{
+    width: 25%;
     padding: 10px;
 }
-
-.search h1{
-    font-size: 50px;
+form button{
+    flex-grow: 1;
+    background-color: #007d36;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
 }
+
+form button:hover{
+    background-color: #02682e;
+}
+.search h1{
+    margin-bottom: 25px;
+    font-size: 50px;
+    z-index: 10;
+}
+
+footer{
+    text-align: center;
+    margin: 10px;
+    color: #5e5e5e;
+}
+
+footer a{
+    text-transform: none;
+    text-decoration: none;
+    color: #4b4a4a;
+}
+
+
