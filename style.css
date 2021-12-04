@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container div{
+    display: none;
+    background-color: lightcoral;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    flex: 1 1 200px;
+}
+
+.alert{
+    background-color: red;
+    color: white;
+}
+
+.visible{
+    display: block !important;
+}
+
+
+.search{
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form input {
+    width: 500px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border: 1px solid black;    
+    display: block;
+    padding: 10px;
+}
+
+form select, form button{
+    padding: 10px;
+}
