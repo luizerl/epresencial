@@ -6,7 +6,9 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-
+body{
+    background-color: rgb(8, 17, 34);
+}
 .container{
     padding: 0 10%;
     width: 100%;
@@ -18,11 +20,11 @@
 
 .container div{
     display: none;
-    background-color:  rgb(19, 43, 89);
+    background-color:  white;
     margin: 10px;
     border-radius: 10px;
     padding: 20px;
-    color: white;
+    color: black;
     flex: 1 1 400px;
 }
 .container p{
@@ -30,13 +32,14 @@
 }
 .container .disciplina{
     font-size: 24px;
-    font-weight: 500;
+    color: #02682e;
+    font-weight: 800;
 }
 
 .container .presencial{
-    background-color: white;
-    color:black;
+    background-color: #003A7A;
     display: inline-block;
+    color: white;
     padding: 5px;
 }
 
@@ -58,21 +61,22 @@
     flex-direction: column;
     height: 50vh;
     color: white;
-    background-color: #181818;
     position: relative;
 }
 
-.search::before{
+body::before{
     content: '';
     display: block;
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-image: url(./img/unb.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     opacity: .5;
-    z-index: 1;
+    z-index: -1;
 }
 form{
     display: flex;
@@ -108,18 +112,19 @@ form button:hover{
     margin-bottom: 25px;
     font-size: 50px;
     z-index: 10;
+    text-shadow: 5px 5px 10px black;
 }
 
 footer{
     text-align: center;
     margin: 10px;
-    color: #5e5e5e;
+    color: #fff;
 }
 
 footer a{
     text-transform: none;
     text-decoration: none;
-    color: #4b4a4a;
+    color: #fff;
 }
 
 
