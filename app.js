@@ -49,7 +49,7 @@ const getData = () => {
         }
         
         addClass(codigo, el);
-        addClass(disciplinas, el);
+        // addClass(disciplinas, el);
         
         searchOption(departamento, modalidade);
         searchOption(modalidade, departamento);
@@ -96,18 +96,28 @@ function formatCode (code ){
 }
 
 function addClass (array, el){
-    
+    const newEl = treatInput(el);
     array.filter( i => { 
-        if ( !el ) return false;
-        else if (i.innerText.includes(el)){
+        temp = treatInput(i.innerText);
+        if ( !newEl ) return false;
+        else if (temp.includes(newEl)){
             i.parentElement.classList.add('visible');
-        }
-        else if (i.innerText.toLocaleLowerCase().startsWith(el.toLocaleLowerCase())){
-            i.parentElement.classXList.add('visible');
         }
     });
 }
 
+function treatInput(input){
+    let newInput = []
+    for (letter of input){
+        if (!Number(letter)){
+            newInput.push(letter.toLocaleLowerCase());
+        }else{
+            newInput.push(letter)
+        }
+    }
+
+    return newInput.join('');
+}
 
 function buildWrap(d, c, t , p){
     const wrap = document.createElement('div');
