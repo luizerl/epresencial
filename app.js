@@ -49,7 +49,7 @@ const getData = () => {
         }
         
         addClass(codigo, el);
-        // addClass(disciplinas, el);
+        addClass(disciplinas, el);
         
         searchOption(departamento, modalidade);
         searchOption(modalidade, departamento);
